@@ -1,0 +1,40 @@
+# Install necessary libraries
+!pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
+
+# Import libraries
+from google.colab import files
+from google.oauth2 import service_account
+from googleapiclient.discovery import build
+from googleapiclient.http import MediaFileUpload
+import os
+
+# Upload the JSON credentials file
+uploaded = files.upload()
+
+# Get the name of the uploaded file
+CREDENTIALS_FILE = list(uploaded.keys())[0]
+
+# Set up Google Drive API credentials
+creds = service_account.Credentials.from_service_account_file(CREDENTIALS_FILE)
+service = build('drive', 'v3', credentials=creds)
+
+# Define a function to upload a file to Google Drive
+def upload_file_to_drive(file_path):
+    file_metadata = {
+        'name': os.path.basename(file_path),  # Set the file name
+        'mimeType': 'application/octet-stream'  # Set the MIME type
+    }
+    
+    media = MediaFileUpload(file_path, mimetype='application/octet-stream')
+    file = service.files().create(body=file_metadata, media_body=media, fields='id').execute()
+    print(f'File ID: {file.get("id")} uploaded successfully.')
+
+# Upload the target file
+print("Please upload the file you want to upload:")
+uploaded_file = files.upload()
+
+# Get the name of the uploaded file
+file_to_upload = list(uploaded_file.keys())[0]
+
+# Upload the file to Google Drive
+upload_file_to_drive(file_to_upload)
