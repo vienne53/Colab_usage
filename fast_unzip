@@ -1,4 +1,4 @@
-#this is a tutorial for using chrome to get faster unzip ! 
+#this is a tutorial for using chrome to get fast unzip ! 
 #here created a path named 'unzipwp' under My Drive,u can change the name
 #'/gdrive/My Drive/WP.zip'is the unzip path, just change WP into your own zip file name
 from google.colab import drive
