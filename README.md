@@ -32,3 +32,23 @@ drive.mount('/content/drive')#then link to your google drive
 从临时环境中copy到Google drive:  
 %cd /content/drive/MyDrive/  
 !git clone https://github.com/TammyLing/Typhoon-forecasting.git
+
+---------------------
+eg:  
+
+from google.colab import drive
+from IPython import get_ipython
+from IPython.display import display
+
+# Mount Google Drive to the standard /content/drive location
+drive.mount('/content/drive')
+
+# The rest of your code remains the same, assuming you want to interact
+# with files/directories within your mounted Google Drive.
+# Note: The lines below will interact with the directory /content/drive/MyDrive/JS
+# after the %cd command.
+
+!git clone https://github.com/thu-ml/RoboticsDiffusionTransformer.git
+%cd /content/drive/MyDrive/JS
+!git clone https://github.com/thu-ml/RoboticsDiffusionTransformer.git
+----------------
