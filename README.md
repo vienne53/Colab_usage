@@ -36,9 +36,9 @@ drive.mount('/content/drive')#then link to your google drive
 ---------------------
 eg:  
 
-from google.colab import drive
-from IPython import get_ipython
-from IPython.display import display
+#from google.colab import drive
+#from Python import get_ipython
+#from Python.display import display
 
 # Mount Google Drive to the standard /content/drive location
 drive.mount('/content/drive')
