@@ -35,7 +35,7 @@ drive.mount('/content/drive')#then link to your google drive
 
 ---------------------
 Code eg (modify things as u may need):  
-
+```
 from google.colab import drive
 from IPython import get_ipython
 from IPython.display import display
@@ -51,4 +51,5 @@ drive.mount('/content/drive')
 !git clone https://github.com/thu-ml/RoboticsDiffusionTransformer.git
 %cd /content/drive/MyDrive/JS
 !git clone https://github.com/thu-ml/RoboticsDiffusionTransformer.git
+```
 ----------------
